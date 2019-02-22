@@ -22,6 +22,9 @@
 // 어느 시점에 callback function이 execute될 지 정해져있고
 // 그 callback function에
 // 해당 이벤트 관련 정보를 모은 오브젝트를 argument로 넘겨주도록.
+
+console.log('Start of main() function')
+
 const fetchingData = (id, callback) => {
     console.log('fetchingData start')
     let user;
@@ -37,7 +40,8 @@ const fetchingData = (id, callback) => {
     console.log('fetchingData End')
 }
 
-
 fetchingData(123, (fromInput) => {
     console.log('lalala', fromInput)
 })
+
+console.log('End of main() function')

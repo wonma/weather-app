@@ -10,6 +10,7 @@ const geocodeAddress = (userAddress, callback) => {
         // console.log(error) // 에러 없으면 값이 null
         // console.log(JSON.stringify(body, undefined, 2)) // Pretty Pringting for Node
 
+        // 잘 보면 어쨌든 콜백은 한 번 발생하는 것임. 무슨 데이터를 떠넘기냐가 다르지.
         if (error) {
             callback('Unable to connect to API address')
         } else if (body.info.statuscode > 0) {
@@ -24,20 +25,4 @@ const geocodeAddress = (userAddress, callback) => {
     })
 }
 
-const fetchWeather = (lati, longi, callback) => {
-    request({
-        url: `https://api.darksky.net/forecast/805bd5a2cb32a32591c107b4ecbb3c2b/${lati},${longi}`,
-        json: true
-    }, (error, response, body) => {
-        if(error) {
-            callback('Failed to fetch weather API')
-        } else {
-            callback(undefined, body.currently)
-        }
-    })
-}
-
-module.exports = {
-    geocodeAddress,
-    fetchWeather
-}
+module.exports.geocodeAddress = geocodeAddress
