@@ -1,3 +1,28 @@
+
+console.log('Start of main() function')
+
+const fetchingData = (id, callback) => {
+    console.log('Start of fetchingData')
+    let user;
+    if (id === 123) {
+        user = {
+            name: 'WonmiKwon',
+            age: 31
+        }
+    }
+    setTimeout(() => {
+        callback(user.name)
+    }, 2000);
+    console.log('End of fetchingData')
+}
+
+fetchingData(123, (fetchedData) => {
+    console.log('Manipulate this data!:', fetchedData)
+})
+
+console.log('End of main() function')
+
+
 // const getUser = (id, callback) => {
     
 //     // 이 코드 블럭이 fetch하는 부분이라 가정해보자.
@@ -23,25 +48,4 @@
 // 그 callback function에
 // 해당 이벤트 관련 정보를 모은 오브젝트를 argument로 넘겨주도록.
 
-console.log('Start of main() function')
 
-const fetchingData = (id, callback) => {
-    console.log('fetchingData start')
-    let user;
-    if (id === 123) {
-        user = {
-            name: 'WonmiKwon',
-            age: 30
-        }
-    }
-    setTimeout(() => {
-        callback(user.name)
-    }, 2000);
-    console.log('fetchingData End')
-}
-
-fetchingData(123, (fromInput) => {
-    console.log('lalala', fromInput)
-})
-
-console.log('End of main() function')

@@ -1,6 +1,7 @@
 const request = require('request')
 
 const geocodeAddress = (userAddress, callback) => {
+    console.log('Start of geocode fetching')
     const address = encodeURIComponent(userAddress)
 
     request({

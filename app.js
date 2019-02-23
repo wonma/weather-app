@@ -2,6 +2,7 @@ const yargs = require('yargs')
 
 const geocode = require('./geocode/geocode')
 const weather = require('./weather/weather')
+const request = require('request')
 
 const argv = yargs
         .options({
@@ -19,6 +20,7 @@ const argv = yargs
 // 다른 곳 어디에 yargs가 쓰일 수 있는지 지금 예상을 못하고있다!!
 
 geocode.geocodeAddress(argv.a, (errorMessage, result) => {
+    console.log('Inside of callback')
     if(errorMessage) {
         console.log(errorMessage)
     } else {
@@ -37,3 +39,6 @@ geocode.geocodeAddress(argv.a, (errorMessage, result) => {
     }
 })
 
+
+
+console.log('This is end of app.js')
