@@ -6,7 +6,8 @@ const fetchWeather = (lati, longi, callback) => {
         url: `https://api.darksky.net/forecast/805bd5a2cb32a32591c107b4ecbbc2b/${lati},${longi}`,
         json: true
     }, (error, response, body) => {
-        if (error) {
+        if (error) { // response가 있으면 error는 null임  
+            // error 오브젝트임 code: 'ENOTFOUND' 갖고있는.
             callback('Failed to Connect to weater API Server')
         } else if (response.statusCode !== 200) {
             callback('Connected to Server but failed to fetch')
