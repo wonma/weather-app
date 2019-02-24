@@ -1,3 +1,6 @@
+//---------------- 이 방법은 request를 Promise로 감싸야해서 불편함이 조금 있음 ----------
+//---------------- 여전히 request가 callback을 사용하고 있기도 하고. -----------------
+
 const request = require('request')
 
 const geocodeAddress = (address) => {
